@@ -41,7 +41,8 @@ function larger(ev) {
   let target = $(ev.target);
   //let elId = target.attr('id');
   if($(window).width() > 1200 && target.is(".slider_img") ) {
-    target.parent().addClass('swiper-slide--bigger');;
+    target.parent().addClass('swiper-slide--bigger');
+    target.parent().children('.slider_description').addClass('slider_description--visible');
   }
 }
 
@@ -49,10 +50,12 @@ function smaller(ev) {
   let target = $(ev.target);
   //let elId = target.attr('id');
   if($(window).width() > 1200 && target.is(".slider_img") ) {
-    target.parent().removeClass('swiper-slide--bigger');;
+    target.parent().removeClass('swiper-slide--bigger');
+    target.parent().children('.slider_description').removeClass('slider_description--visible');
   }
 }
 
 $(".slider_img").mouseover(larger);
 $(".slider_img").mouseout(smaller);
 
+//$(this).parent().children("p.hidden").removeClass("hidden");

@@ -3,13 +3,31 @@
     &_img {
         height: 280px;
     }
+
+    &_description {
+
+        background-color: aquamarine;
+
+        @mixin atLarge {
+            height: 110px;
+            opacity: 0;
+            transition: all .5s ease-out;
+        }
+    }
+
+    &_description--visible {
+        opacity: 1;
+    }
 }
 
 .swiper-slide {
-    transform: scale(.8);
-    transition: all .5s ease-out;
     background-color: azure;
 
+    @mixin atLarge {
+        transform: scale(.65);
+        transition: all .5s ease-out;
+    }
+    
     &--bigger {
         transform: scale(1);
     }

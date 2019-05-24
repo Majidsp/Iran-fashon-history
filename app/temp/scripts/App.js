@@ -206,7 +206,8 @@ function larger(ev) {
   var target = (0, _jquery2.default)(ev.target);
   //let elId = target.attr('id');
   if ((0, _jquery2.default)(window).width() > 1200 && target.is(".slider_img")) {
-    target.parent().addClass('swiper-slide--bigger');;
+    target.parent().addClass('swiper-slide--bigger');
+    target.parent().children('.slider_description').addClass('slider_description--visible');
   }
 }
 
@@ -214,12 +215,15 @@ function smaller(ev) {
   var target = (0, _jquery2.default)(ev.target);
   //let elId = target.attr('id');
   if ((0, _jquery2.default)(window).width() > 1200 && target.is(".slider_img")) {
-    target.parent().removeClass('swiper-slide--bigger');;
+    target.parent().removeClass('swiper-slide--bigger');
+    target.parent().children('.slider_description').removeClass('slider_description--visible');
   }
 }
 
 (0, _jquery2.default)(".slider_img").mouseover(larger);
 (0, _jquery2.default)(".slider_img").mouseout(smaller);
+
+//$(this).parent().children("p.hidden").removeClass("hidden");
 
 /***/ }),
 /* 2 */
