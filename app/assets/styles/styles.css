@@ -1,1 +1,17 @@
 @import "normalize.css";
+@import "base/_global";
+@import "base/_variables";
+@import "base/_mixins";
+@import "modules/_page-section";
+@import "modules/_ver-centralizer-wrapper";
+@import "modules/_hor-centralizer-wrapper";
+@import "modules/_firstpage";
+@import "modules/_section-mover";
+@import "modules/_secondpage";
+@import "modules/_thirdpage";
+@import "modules/_fourthpage";
+/* @import "../../../node_modules/owl.carousel/dist/assets/owl.carousel";
+@import "../../../node_modules/owl.carousel/dist/assets/owl.theme.default"; */
+@import "../../../node_modules/swiper/dist/css/swiper.min";
+@import "modules/_slider";
+@import "modules/_page-title";

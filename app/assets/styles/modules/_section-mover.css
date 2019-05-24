@@ -1,0 +1,33 @@
+.section-mover {
+    position: absolute;
+    width: 100%;
+    background-color: aqua;
+    text-align: center;
+
+    &--bottom {
+        bottom: 3%;
+    }
+
+    &--top {
+        top: 3%;
+    }
+
+    &_icon {
+        width: 30px;
+        height: 30px;
+
+        @mixin atSmall {
+            width: 40px;
+            height: 40px;
+        }
+
+        @mixin atMedium {
+            width: 35px;
+            height: 35px;
+        }
+
+        &--top {
+            transform: rotate(180deg);
+        }
+    }
+}

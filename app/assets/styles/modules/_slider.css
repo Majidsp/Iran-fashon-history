@@ -1,0 +1,31 @@
+.slider {
+    
+    &_img {
+        height: 280px;
+    }
+}
+
+.swiper-slide {
+    transform: scale(.8);
+    transition: all .5s ease-out;
+    background-color: azure;
+
+    &--bigger {
+        transform: scale(1);
+    }
+}
+
+.swiper-container {
+
+    @mixin atSmall {
+        margin-bottom: 18%;
+    }
+
+    @mixin atMedium {
+        margin-bottom: 0;
+    }
+
+    @mixin atLarge {
+        margin-bottom: 9%;
+    }
+}

@@ -1,0 +1,26 @@
+.hor-centralizer-wrapper {
+    max-width: 280px;
+    background-color: red;
+    margin: auto;
+
+    @mixin atSmall {
+        max-width: 650px;
+    }
+
+    @mixin atMedium {
+        max-width: 900px;
+    }
+
+    @mixin atLarge {
+        max-width: 1200px;
+    }
+
+    &--bigger-pages {
+        max-width: 100%;
+        
+        @mixin atLarge {
+            max-width: 80%;
+        }
+    }
+
+}

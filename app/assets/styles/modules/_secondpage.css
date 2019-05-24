@@ -1,0 +1,21 @@
+.secondpage {
+    text-align: center;
+
+    &_text-content {
+        display: inline-block;
+        text-align: justify;
+
+        @mixin atSmall {
+            max-width: 500px;
+            font-size: 1.5rem;
+        }
+
+        @mixin atLarge {
+            max-width: 700px;
+        }
+    }
+
+    mark {
+        background-color: $mainPink;
+    }
+}

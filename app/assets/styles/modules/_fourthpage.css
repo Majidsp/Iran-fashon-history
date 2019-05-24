@@ -1,0 +1,21 @@
+.fourthpage {
+    text-align: center;
+    
+
+    &_title {
+        margin: 0 auto;
+        padding-bottom: 5%;
+
+        @mixin atSmall {
+            padding-bottom: 18%;
+        }
+
+        @mixin atMedium {
+            padding-bottom: 5%;
+        }
+
+        @mixin atLarge {
+            padding-bottom: 9%;
+        }
+    }
+}

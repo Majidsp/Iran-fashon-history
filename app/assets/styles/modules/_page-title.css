@@ -1,0 +1,7 @@
+.page-title {
+    position: absolute;
+    width: 100%;
+    background-color: rgb(125, 202, 0);
+    text-align: center;
+    top: 12%;
+}
