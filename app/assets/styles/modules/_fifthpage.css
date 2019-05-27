@@ -1,0 +1,85 @@
+.fifthpage {
+    /* text-align: center; */
+
+    &__icon {
+        max-height: 500px;
+    }
+    
+
+    &_title {
+        margin: 0 auto;
+        padding-bottom: 5%;
+
+        @mixin atSmall {
+            padding-bottom: 18%;
+        }
+
+        @mixin atMedium {
+            padding-bottom: 5%;
+        }
+
+        @mixin atLarge {
+            padding-bottom: 9%;
+        }
+    }
+
+    &__3 {
+        float: left;
+        width: 25%;
+        background-color: brown;
+        text-align: center;
+        margin: 0 15px;
+    }
+
+    &__4 {
+        float: left;
+        width: 33.33%;
+        background-color: bisque;
+        margin: 0 15px;
+
+        img {
+            max-width: 60px;
+        }
+    }
+
+    &__6 {
+        float: left;
+        width: 50%;
+        background-color: aquamarine;
+        padding: 0 5px;
+
+        img {
+           float: left;
+           margin-right: 40px;
+           max-width: 80px;
+        }
+
+        div {
+            float: left;
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+
+    &__col {
+        max-width: 230px;
+        background-color: beige;
+        margin: auto;
+    }
+
+    &__color--icon {
+        height: 150px;
+    }
+
+    &__color--icon--small {
+        height: 65px;
+    }
+}
+
+.ace__img {
+    transition: all .5s ease-out;
+}
+
+.ace__img--bigger {
+    transform: scale(1.5);
+}

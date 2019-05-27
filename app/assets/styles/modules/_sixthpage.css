@@ -1,0 +1,45 @@
+.sixthpage {
+    text-align: center;
+    
+
+    &_title {
+        margin: 0 auto;
+        padding-bottom: 5%;
+
+        @mixin atSmall {
+            padding-bottom: 18%;
+        }
+
+        @mixin atMedium {
+            padding-bottom: 5%;
+        }
+
+        @mixin atLarge {
+            padding-bottom: 9%;
+        }
+    }
+
+    &__4 {
+        text-align: left;
+        width: 100%;
+
+        @mixin atLarge {
+            float: left;
+            width: 25%;
+        }
+    }
+
+    &__col {
+        max-width: 230px;
+        background-color: beige;
+        margin: auto;
+    }
+
+    &__color--icon {
+        height: 150px;
+    }
+
+    &__color--icon--small {
+        height: 65px;
+    }
+}

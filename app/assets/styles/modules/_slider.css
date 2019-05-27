@@ -1,10 +1,10 @@
 .slider {
     
-    &_img {
+    &__img {
         height: 280px;
     }
 
-    &_description {
+    &__description {
 
         background-color: aquamarine;
 
@@ -15,7 +15,7 @@
         }
     }
 
-    &_description--visible {
+    &__description--visible {
         opacity: 1;
     }
 }
@@ -23,17 +23,20 @@
 .swiper-slide {
     background-color: azure;
 
-    @mixin atLarge {
-        transform: scale(.65);
-        transition: all .5s ease-out;
+    &__swiper-1 {
+
+        @mixin atLarge {
+            transform: scale(.65);
+            transition: all .5s ease-out;
+        }
     }
-    
+
     &--bigger {
         transform: scale(1);
     }
 }
 
-.swiper-container {
+.swiper-1 {
 
     @mixin atSmall {
         margin-bottom: 18%;

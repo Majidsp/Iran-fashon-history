@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
 
-var mySwiper = new Swiper('.swiper-container', {
+var mySwiper1 = new Swiper('.swiper-1', {
     slidesPerView: 5,
     spaceBetween: 10,
     breakpoints: {
@@ -19,9 +19,18 @@ var mySwiper = new Swiper('.swiper-container', {
       }
     },
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next-1',
+        prevEl: '.swiper-button-prev-1',
       },
+});
+
+var mySwiper2 = new Swiper('.swiper-2', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  navigation: {
+      nextEl: '.swiper-button-next-2',
+      prevEl: '.swiper-button-prev-2',
+    },
 });
 
 //$(".slider_img").on('mouseover',function(){
@@ -40,22 +49,39 @@ var mySwiper = new Swiper('.swiper-container', {
 function larger(ev) {
   let target = $(ev.target);
   //let elId = target.attr('id');
-  if($(window).width() > 1200 && target.is(".slider_img") ) {
+  if($(window).width() > 1200 && target.is(".slider__img") ) {
     target.parent().addClass('swiper-slide--bigger');
-    target.parent().children('.slider_description').addClass('slider_description--visible');
+    target.parent().children('.slider__description').addClass('slider__description--visible');
   }
 }
 
 function smaller(ev) {
   let target = $(ev.target);
   //let elId = target.attr('id');
-  if($(window).width() > 1200 && target.is(".slider_img") ) {
+  if($(window).width() > 1200 && target.is(".slider__img") ) {
     target.parent().removeClass('swiper-slide--bigger');
-    target.parent().children('.slider_description').removeClass('slider_description--visible');
+    target.parent().children('.slider__description').removeClass('slider__description--visible');
   }
 }
 
-$(".slider_img").mouseover(larger);
-$(".slider_img").mouseout(smaller);
+$(".slider__img").mouseover(larger);
+$(".slider__img").mouseout(smaller);
+
+function larger2(ev) {
+  let target = $(ev.target);
+  if($(window).width() > 1200 && target.is(".ace__img") ) {
+    target.addClass('ace__img--bigger');
+  }
+}
+
+function smaller2(ev) {
+  let target = $(ev.target);
+  if($(window).width() > 1200 && target.is(".ace__img") ) {
+    target.removeClass('ace__img--bigger');
+  }
+}
+
+$(".ace__img").mouseover(larger2);
+$(".ace__img").mouseout(smaller2);
 
 //$(this).parent().children("p.hidden").removeClass("hidden");
