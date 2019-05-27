@@ -15,3 +15,5 @@
 @import "../../../node_modules/swiper/dist/css/swiper.min";
 @import "modules/_slider";
 @import "modules/_page-title";
+@import "modules/_fifthpage";
+@import "modules/_sixthpage";
