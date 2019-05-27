@@ -13,6 +13,7 @@
 
     @mixin atLarge {
         max-width: 1200px;
+        
     }
 
     &--bigger-pages {

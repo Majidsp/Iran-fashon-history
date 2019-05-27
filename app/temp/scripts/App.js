@@ -198,6 +198,29 @@ var mySwiper2 = new _swiper2.default('.swiper-2', {
   }
 });
 
+var mySwiper2 = new _swiper2.default('.swiper-3', {
+  slidesPerView: 4,
+  spaceBetween: 50,
+  breakpoints: {
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 10
+    },
+    800: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    530: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    }
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
+
 //$(".slider_img").on('mouseover',function(){
 //if ($(window).width() > 1024) {
 //$(".swiper-slide").addClass("swiper-slide--bigger");
