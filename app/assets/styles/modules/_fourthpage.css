@@ -20,7 +20,7 @@
     }
 
     &__slider {
-        background-color: azure;
+        /* background-color: azure; */
 
         @mixin atLarge {
             transform: scale(.65);
@@ -49,7 +49,7 @@
     }
 
     &__description {
-        background-color: aquamarine;
+        /* background-color: aquamarine; */
 
         @mixin atLarge {
             height: 110px;

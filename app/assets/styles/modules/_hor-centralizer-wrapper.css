@@ -1,6 +1,6 @@
 .hor-centralizer-wrapper {
     max-width: 330px;
-    background-color: red;
+    /* background-color: red; */
     margin: auto;
 
     @mixin atSmall {

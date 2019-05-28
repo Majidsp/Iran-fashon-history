@@ -198,9 +198,10 @@ var mySwiper2 = new _swiper2.default('.swiper-2', {
   }
 });
 
-var mySwiper2 = new _swiper2.default('.swiper-3', {
+var mySwiper3 = new _swiper2.default('.swiper-3', {
   slidesPerView: 4,
   spaceBetween: 50,
+  themeColor: '#1f252a',
   breakpoints: {
     1200: {
       slidesPerView: 3,
@@ -219,6 +220,7 @@ var mySwiper2 = new _swiper2.default('.swiper-3', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev'
   }
+
 });
 
 function larger(ev) {

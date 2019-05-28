@@ -1,0 +1,52 @@
+.app-header {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    background-color: red;
+    transition: background-color .4s ease-in-out;
+
+    &__menu-icon {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        width: 26px;
+        height: 26px;
+        z-index: 15;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 26px;
+            height: 4px;
+            background-color: #000000;
+            transform-origin: 0 0;
+            transition: transform .3s ease-out;
+        }
+
+        &__middle {
+            position: absolute;
+            top: 11px;
+            left: 0;
+            width: 26px;
+            height: 4px;
+            background-color: #000000;
+            transform-origin: 0 50%;
+            transition: all .3s ease-out;
+
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 26px;
+            height: 4px;
+            background-color: #000000;
+            transition: transform .3s ease-out;
+            transform-origin: 0 100%;
+        }  
+    }
+}

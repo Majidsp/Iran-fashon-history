@@ -33,9 +33,10 @@ var mySwiper2 = new Swiper('.swiper-2', {
     },
 });
 
-var mySwiper2 = new Swiper('.swiper-3', {
+var mySwiper3 = new Swiper('.swiper-3', {
   slidesPerView: 4,
   spaceBetween: 50,
+  themeColor: '#1f252a',
   breakpoints: {
     1200: {
       slidesPerView: 3,
@@ -54,6 +55,7 @@ var mySwiper2 = new Swiper('.swiper-3', {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    
 });
 
 

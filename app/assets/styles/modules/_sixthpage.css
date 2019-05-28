@@ -40,7 +40,7 @@
 
     &__col {
         max-width: 230px;
-        background-color: beige;
+        /* background-color: beige; */
         margin: auto;
     }
 
@@ -90,3 +90,4 @@
         }
     }
 }
+
