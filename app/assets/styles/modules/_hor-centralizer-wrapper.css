@@ -1,5 +1,5 @@
 .hor-centralizer-wrapper {
-    max-width: 280px;
+    max-width: 330px;
     background-color: red;
     margin: auto;
 
@@ -17,7 +17,7 @@
     }
 
     &--bigger-pages {
-        max-width: 100%;
+        max-width: 95%;
         
         @mixin atLarge {
             max-width: 80%;

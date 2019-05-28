@@ -18,4 +18,55 @@
             padding-bottom: 9%;
         }
     }
+
+    &__slider {
+        background-color: azure;
+
+        @mixin atLarge {
+            transform: scale(.65);
+            transition: all .5s ease-out;
+        }
+
+        &--bigger {
+            transform: scale(1);
+        }
+    }
+
+    &__icon {
+        max-height: 180px;
+
+        @mixin atSmall {
+            max-height: 250px;
+        }
+
+        @mixin atLarge {
+            max-height: 280px;
+        }
+    }
+
+    &__title {
+
+    }
+
+    &__description {
+        background-color: aquamarine;
+
+        @mixin atLarge {
+            height: 110px;
+            opacity: 0;
+            transition: all .5s ease-out;
+        }
+
+        &--visible {
+            opacity: 1;
+        }
+
+        & > P {
+            font-size: .9rem;
+
+            @mixin atSmall {
+                font-size: 1rem;
+            }
+        }
+    }
 }

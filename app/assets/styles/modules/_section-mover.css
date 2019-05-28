@@ -5,11 +5,19 @@
     text-align: center;
 
     &--bottom {
-        bottom: 3%;
+        bottom: 5%;
+
+        &--upper {
+            bottom: 12%;
+
+            @mixin atSmall {
+                bottom: 5%; 
+            }
+        }
     }
 
     &--top {
-        top: 3%;
+        top: 5%;
     }
 
     &_icon {

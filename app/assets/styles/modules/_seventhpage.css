@@ -1,0 +1,11 @@
+.seventhpage {
+    
+    &--swiper-3 {
+        text-align: center;
+        
+        img {
+            max-width: 250px;
+            max-height: 400px;
+        }
+    }
+}

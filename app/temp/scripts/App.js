@@ -171,11 +171,11 @@ var mySwiper1 = new _swiper2.default('.swiper-1', {
   spaceBetween: 10,
   breakpoints: {
     1200: {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 10
     },
     800: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 10
     },
     530: {
@@ -221,39 +221,24 @@ var mySwiper2 = new _swiper2.default('.swiper-3', {
   }
 });
 
-//$(".slider_img").on('mouseover',function(){
-//if ($(window).width() > 1024) {
-//$(".swiper-slide").addClass("swiper-slide--bigger");
-//}
-//});
-
-//$(".slider_img").on('mouseout',function(){
-// if ($(window).width() > 1024) {
-// $(".swiper-slide").removeClass("swiper-slide--bigger");
-//}
-//});
-
-
 function larger(ev) {
   var target = (0, _jquery2.default)(ev.target);
-  //let elId = target.attr('id');
-  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".slider__img")) {
-    target.parent().addClass('swiper-slide--bigger');
-    target.parent().children('.slider__description').addClass('slider__description--visible');
+  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".fourthpage__icon")) {
+    target.parent().addClass('fourthpage__slider--bigger');
+    target.parent().children('.fourthpage__description').addClass('fourthpage__description--visible');
   }
 }
 
 function smaller(ev) {
   var target = (0, _jquery2.default)(ev.target);
-  //let elId = target.attr('id');
-  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".slider__img")) {
-    target.parent().removeClass('swiper-slide--bigger');
-    target.parent().children('.slider__description').removeClass('slider__description--visible');
+  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".fourthpage__icon")) {
+    target.parent().removeClass('fourthpage__slider--bigger');
+    target.parent().children('.fourthpage__description').removeClass('fourthpage__description--visible');
   }
 }
 
-(0, _jquery2.default)(".slider__img").mouseover(larger);
-(0, _jquery2.default)(".slider__img").mouseout(smaller);
+(0, _jquery2.default)(".fourthpage__icon").mouseover(larger);
+(0, _jquery2.default)(".fourthpage__icon").mouseout(smaller);
 
 function larger2(ev) {
   var target = (0, _jquery2.default)(ev.target);
@@ -272,7 +257,24 @@ function smaller2(ev) {
 (0, _jquery2.default)(".ace__img").mouseover(larger2);
 (0, _jquery2.default)(".ace__img").mouseout(smaller2);
 
-//$(this).parent().children("p.hidden").removeClass("hidden");
+function showMore(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() < 1200 && target.is(".fifthpage__small-screen-section-title-and-description__showmore")) {
+    target.parent().addClass('fifthpage__3--not-visible');
+    target.parent().parent().find('.fifthpage__4').addClass('fifthpage__4--visible');
+  }
+}
+
+function showMoreReverse(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() < 1200 && target.is(".fifthpage__small-screen-section-title-and-description__showmore--reverse")) {
+    target.parent().parent().find('.fifthpage__4').removeClass('fifthpage__4--visible');
+    target.parent().parent().find('.fifthpage__3').removeClass('fifthpage__3--not-visible');
+  }
+}
+
+(0, _jquery2.default)(".fifthpage__small-screen-section-title-and-description__showmore").click(showMore);
+(0, _jquery2.default)(".fifthpage__small-screen-section-title-and-description__showmore--reverse").click(showMoreReverse);
 
 /***/ }),
 /* 2 */

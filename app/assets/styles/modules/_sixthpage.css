@@ -21,7 +21,16 @@
 
     &__4 {
         text-align: left;
-        width: 100%;
+        width: 25%;
+        float: left;
+
+        & > div {
+            min-height: 100px;
+
+            @mixin atSmall {
+                min-height: 140px;
+            }
+        }
 
         @mixin atLarge {
             float: left;
@@ -35,11 +44,49 @@
         margin: auto;
     }
 
-    &__color--icon {
-        height: 150px;
+    &__color--icon-one-row {
+        max-width: 22px;
+
+        @mixin atSmall {
+            max-width: 37px;
+        }
+
+        @mixin atLarge {
+            max-width: 56px;
+        }
     }
 
-    &__color--icon--small {
-        height: 65px;
+    &__color--icon-two-row {
+        max-width: 50px;
+
+        @mixin atSmall {
+            max-width: 80px;
+        }
+
+        @mixin atLarge {
+            max-width: 120px;
+        }
+    }
+
+    &__color--icon-three-row {
+        max-width: 75px;
+        
+        @mixin atSmall {
+            max-width: 120px;
+        }
+
+        @mixin atLarge {
+            max-width: 180px;
+        }
+    }
+
+    
+
+    &__color-title {
+        font-size: .6rem;
+
+        @mixin atSmall {
+            font-size: 1rem;
+        }
     }
 }

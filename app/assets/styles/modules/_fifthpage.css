@@ -19,12 +19,16 @@
         text-align: center;
         padding: 0 15px;
         margin: auto;
-        display: none;
 
         @mixin atLarge {
             float: left;
             width: 25%;
+            display: block;
         }
+    }
+
+    &__3--not-visible {
+        display: none;
     }
 
     &__4 {
@@ -32,13 +36,19 @@
         background-color: bisque;
         padding: 0 15px;
         margin: auto;
-        display: block;
+        clear: left;
+        display: none;
 
         @mixin atLarge {
             float: left;
-            width: 33.33%;
+            width: 37.5%;
             display: block;
+            clear: none;
         }
+    }
+
+    &__4--visible {
+        display: block;
     }
 
     &__6 {
@@ -49,11 +59,14 @@
 
         img {
             float: left;
-                margin-right: 10px;
-                max-width: 50px;
+            margin-right: 10px;
+            max-width: 40px;
+            max-height: 120px;
+
             @mixin atSmall {
                 margin-right: 40px;
                 max-width: 80px;
+                max-height: 240px;
             }
         }
 
@@ -61,6 +74,7 @@
             float: left;
             width: 100%;
             margin: 10px 0;
+
             @mixin atLarge {
             }
         }
@@ -81,7 +95,11 @@
     }
 
     &__icon--colors--two-col {
-        max-width: 150px;
+        max-width: 75px;
+
+        @mixin atSmall {
+            max-width: 150px;
+        }
     }
 
     &__small-screen-section-title-and-description {
@@ -100,11 +118,12 @@
         }
 
         &__description {
-            font-size: .9rem;
+            font-size: .7rem;
 
             @mixin atSmall {
                 font-size: 1rem;
             }
+
         }
 
         &__showmore {
@@ -116,7 +135,7 @@
                 display: none;
             }
 
-            &--diverce {
+            &--reverse {
                 transform: rotate(180deg);
                 display: block;
                 max-width: 20px;
@@ -139,6 +158,7 @@
 
     &__accessories-description {
         font-size: .7rem;
+        margin: 0;
 
         @mixin atSmall {
             font-size: 1rem;
