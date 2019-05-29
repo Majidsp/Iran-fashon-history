@@ -11,9 +11,9 @@
 @import "modules/_secondpage";
 @import "modules/_thirdpage";
 @import "modules/_fourthpage";
-/* @import "../../../node_modules/owl.carousel/dist/assets/owl.carousel";
-@import "../../../node_modules/owl.carousel/dist/assets/owl.theme.default"; */
 @import "../../../node_modules/swiper/dist/css/swiper.min";
 @import "modules/_fifthpage";
 @import "modules/_sixthpage";
 @import "modules/_seventhpage";
+@import "modules/_reveal-item";
+@import "modules/_app-menu";

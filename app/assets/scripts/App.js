@@ -1,5 +1,15 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
+import RevealOnScroll from './modules/RevealOnScroll';
+import StickyHeader from './modules/StickyHeader';
+import Menu from './modules/Menu';
+
+
+new RevealOnScroll($(".secondpage"), "85%");
+new RevealOnScroll($(".thirdpage"), "85%");
+const stickyHeader = new StickyHeader();
+const menu = new Menu();
+
 
 var mySwiper1 = new Swiper('.swiper-1', {
     slidesPerView: 5,

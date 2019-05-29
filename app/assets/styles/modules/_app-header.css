@@ -1,40 +1,64 @@
 .app-header {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    z-index: 2;
-    background-color: red;
-    transition: background-color .4s ease-in-out;
+    height: 56px;
+    background-color: rgba(0, 0, 0, .1);
+    transition: all .4s ease;
+    transform-origin: 50% 0;
+    z-index: 10;
+    transform: scale(0);
+
+    &--visible {
+        transform: scale(1);
+    }
+
+    @mixin atSmall {
+        height: 76px;
+    }
 
     &__menu-icon {
         position: absolute;
-        top: 25px;
-        left: 25px;
-        width: 26px;
+        top: 15px;
+        left: 15px;
+        width: 35px;
         height: 26px;
-        z-index: 15;
+        z-index: 10 !important;
+
+        @mixin atSmall {
+            width: 25px;
+            top: 25px;
+            left: 25px;
+        }
 
         &::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            width: 26px;
+            width: 25px;
             height: 4px;
             background-color: #000000;
             transform-origin: 0 0;
             transition: transform .3s ease-out;
+
+            @mixin atSmall {
+                width: 35px;
+            }
         }
 
         &__middle {
             position: absolute;
             top: 11px;
             left: 0;
-            width: 26px;
+            width: 25px;
             height: 4px;
             background-color: #000000;
             transform-origin: 0 50%;
             transition: all .3s ease-out;
 
+            @mixin atSmall {
+                width: 35px;
+            }
         }
 
         &::after {
@@ -42,11 +66,38 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 26px;
+            width: 25px;
             height: 4px;
             background-color: #000000;
             transition: transform .3s ease-out;
             transform-origin: 0 100%;
+
+            @mixin atSmall {
+                width: 35px;
+            }
         }  
+    }
+
+    &__menu-icon--close-x {
+        &::before {
+            transform: rotate(45deg) scalex(1.25);
+
+            @mixin atSmall {
+                transform: rotate(45deg) scalex(.92);
+            }
+        }
+
+        .app-header__menu-icon__middle {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        &::after {
+            transform: rotate(-45deg) scalex(1.25);
+
+            @mixin atSmall {
+                transform: rotate(-45deg) scalex(.92);
+            }
+        }
     }
 }

@@ -10,8 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.4.1",
+    "jquery-smooth-scroll": "^2.2.0",
     "normalize.css": "^8.0.1",
-    "swiper": "^4.5.0"
+    "swiper": "^4.5.0",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.0",

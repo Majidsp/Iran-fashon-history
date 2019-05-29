@@ -21,7 +21,7 @@
         height: 250px;
         width: auto;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 0px;
 
         @mixin atSmall {
             height: 300px;

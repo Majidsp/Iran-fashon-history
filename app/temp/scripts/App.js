@@ -60,226 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-/**
- * SSR Window 1.0.1
- * Better handling for window object in SSR environment
- * https://github.com/nolimits4web/ssr-window
- *
- * Copyright 2018, Vladimir Kharlampidi
- *
- * Licensed under MIT
- *
- * Released on: July 18, 2018
- */
-var doc = typeof document === 'undefined' ? {
-  body: {},
-  addEventListener: function addEventListener() {},
-  removeEventListener: function removeEventListener() {},
-  activeElement: {
-    blur: function blur() {},
-    nodeName: ''
-  },
-  querySelector: function querySelector() {
-    return null;
-  },
-  querySelectorAll: function querySelectorAll() {
-    return [];
-  },
-  getElementById: function getElementById() {
-    return null;
-  },
-  createEvent: function createEvent() {
-    return {
-      initEvent: function initEvent() {}
-    };
-  },
-  createElement: function createElement() {
-    return {
-      children: [],
-      childNodes: [],
-      style: {},
-      setAttribute: function setAttribute() {},
-      getElementsByTagName: function getElementsByTagName() {
-        return [];
-      }
-    };
-  },
-  location: { hash: '' }
-} : document; // eslint-disable-line
-
-var win = typeof window === 'undefined' ? {
-  document: doc,
-  navigator: {
-    userAgent: ''
-  },
-  location: {},
-  history: {},
-  CustomEvent: function CustomEvent() {
-    return this;
-  },
-  addEventListener: function addEventListener() {},
-  removeEventListener: function removeEventListener() {},
-  getComputedStyle: function getComputedStyle() {
-    return {
-      getPropertyValue: function getPropertyValue() {
-        return '';
-      }
-    };
-  },
-  Image: function Image() {},
-  Date: function Date() {},
-  screen: {},
-  setTimeout: function setTimeout() {},
-  clearTimeout: function clearTimeout() {}
-} : window; // eslint-disable-line
-
-exports.window = win;
-exports.document = doc;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _jquery = __webpack_require__(2);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _swiper = __webpack_require__(4);
-
-var _swiper2 = _interopRequireDefault(_swiper);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mySwiper1 = new _swiper2.default('.swiper-1', {
-  slidesPerView: 5,
-  spaceBetween: 10,
-  breakpoints: {
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 10
-    },
-    800: {
-      slidesPerView: 2,
-      spaceBetween: 10
-    },
-    530: {
-      slidesPerView: 1,
-      spaceBetween: 0
-    }
-  },
-  navigation: {
-    nextEl: '.swiper-button-next-1',
-    prevEl: '.swiper-button-prev-1'
-  }
-});
-
-var mySwiper2 = new _swiper2.default('.swiper-2', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  navigation: {
-    nextEl: '.swiper-button-next-2',
-    prevEl: '.swiper-button-prev-2'
-  }
-});
-
-var mySwiper3 = new _swiper2.default('.swiper-3', {
-  slidesPerView: 4,
-  spaceBetween: 50,
-  themeColor: '#1f252a',
-  breakpoints: {
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 10
-    },
-    800: {
-      slidesPerView: 2,
-      spaceBetween: 10
-    },
-    530: {
-      slidesPerView: 1,
-      spaceBetween: 0
-    }
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }
-
-});
-
-function larger(ev) {
-  var target = (0, _jquery2.default)(ev.target);
-  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".fourthpage__icon")) {
-    target.parent().addClass('fourthpage__slider--bigger');
-    target.parent().children('.fourthpage__description').addClass('fourthpage__description--visible');
-  }
-}
-
-function smaller(ev) {
-  var target = (0, _jquery2.default)(ev.target);
-  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".fourthpage__icon")) {
-    target.parent().removeClass('fourthpage__slider--bigger');
-    target.parent().children('.fourthpage__description').removeClass('fourthpage__description--visible');
-  }
-}
-
-(0, _jquery2.default)(".fourthpage__icon").mouseover(larger);
-(0, _jquery2.default)(".fourthpage__icon").mouseout(smaller);
-
-function larger2(ev) {
-  var target = (0, _jquery2.default)(ev.target);
-  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".ace__img")) {
-    target.addClass('ace__img--bigger');
-  }
-}
-
-function smaller2(ev) {
-  var target = (0, _jquery2.default)(ev.target);
-  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".ace__img")) {
-    target.removeClass('ace__img--bigger');
-  }
-}
-
-(0, _jquery2.default)(".ace__img").mouseover(larger2);
-(0, _jquery2.default)(".ace__img").mouseout(smaller2);
-
-function showMore(ev) {
-  var target = (0, _jquery2.default)(ev.target);
-  if ((0, _jquery2.default)(window).width() < 1200 && target.is(".fifthpage__small-screen-section-title-and-description__showmore")) {
-    target.parent().addClass('fifthpage__3--not-visible');
-    target.parent().parent().find('.fifthpage__4').addClass('fifthpage__4--visible');
-  }
-}
-
-function showMoreReverse(ev) {
-  var target = (0, _jquery2.default)(ev.target);
-  if ((0, _jquery2.default)(window).width() < 1200 && target.is(".fifthpage__small-screen-section-title-and-description__showmore--reverse")) {
-    target.parent().parent().find('.fifthpage__4').removeClass('fifthpage__4--visible');
-    target.parent().parent().find('.fifthpage__3').removeClass('fifthpage__3--not-visible');
-  }
-}
-
-(0, _jquery2.default)(".fifthpage__small-screen-section-title-and-description__showmore").click(showMore);
-(0, _jquery2.default)(".fifthpage__small-screen-section-title-and-description__showmore--reverse").click(showMoreReverse);
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10422,10 +10207,997 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 	return jQuery;
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*!
+Waypoints - 4.0.1
+Copyright © 2011-2016 Caleb Troughton
+Licensed under the MIT license.
+https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+*/
+(function () {
+  'use strict';
+
+  var keyCounter = 0;
+  var allWaypoints = {};
+
+  /* http://imakewebthings.com/waypoints/api/waypoint */
+  function Waypoint(options) {
+    if (!options) {
+      throw new Error('No options passed to Waypoint constructor');
+    }
+    if (!options.element) {
+      throw new Error('No element option passed to Waypoint constructor');
+    }
+    if (!options.handler) {
+      throw new Error('No handler option passed to Waypoint constructor');
+    }
+
+    this.key = 'waypoint-' + keyCounter;
+    this.options = Waypoint.Adapter.extend({}, Waypoint.defaults, options);
+    this.element = this.options.element;
+    this.adapter = new Waypoint.Adapter(this.element);
+    this.callback = options.handler;
+    this.axis = this.options.horizontal ? 'horizontal' : 'vertical';
+    this.enabled = this.options.enabled;
+    this.triggerPoint = null;
+    this.group = Waypoint.Group.findOrCreate({
+      name: this.options.group,
+      axis: this.axis
+    });
+    this.context = Waypoint.Context.findOrCreateByElement(this.options.context);
+
+    if (Waypoint.offsetAliases[this.options.offset]) {
+      this.options.offset = Waypoint.offsetAliases[this.options.offset];
+    }
+    this.group.add(this);
+    this.context.add(this);
+    allWaypoints[this.key] = this;
+    keyCounter += 1;
+  }
+
+  /* Private */
+  Waypoint.prototype.queueTrigger = function (direction) {
+    this.group.queueTrigger(this, direction);
+  };
+
+  /* Private */
+  Waypoint.prototype.trigger = function (args) {
+    if (!this.enabled) {
+      return;
+    }
+    if (this.callback) {
+      this.callback.apply(this, args);
+    }
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/destroy */
+  Waypoint.prototype.destroy = function () {
+    this.context.remove(this);
+    this.group.remove(this);
+    delete allWaypoints[this.key];
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/disable */
+  Waypoint.prototype.disable = function () {
+    this.enabled = false;
+    return this;
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/enable */
+  Waypoint.prototype.enable = function () {
+    this.context.refresh();
+    this.enabled = true;
+    return this;
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/next */
+  Waypoint.prototype.next = function () {
+    return this.group.next(this);
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/previous */
+  Waypoint.prototype.previous = function () {
+    return this.group.previous(this);
+  };
+
+  /* Private */
+  Waypoint.invokeAll = function (method) {
+    var allWaypointsArray = [];
+    for (var waypointKey in allWaypoints) {
+      allWaypointsArray.push(allWaypoints[waypointKey]);
+    }
+    for (var i = 0, end = allWaypointsArray.length; i < end; i++) {
+      allWaypointsArray[i][method]();
+    }
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/destroy-all */
+  Waypoint.destroyAll = function () {
+    Waypoint.invokeAll('destroy');
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/disable-all */
+  Waypoint.disableAll = function () {
+    Waypoint.invokeAll('disable');
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/enable-all */
+  Waypoint.enableAll = function () {
+    Waypoint.Context.refreshAll();
+    for (var waypointKey in allWaypoints) {
+      allWaypoints[waypointKey].enabled = true;
+    }
+    return this;
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/refresh-all */
+  Waypoint.refreshAll = function () {
+    Waypoint.Context.refreshAll();
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/viewport-height */
+  Waypoint.viewportHeight = function () {
+    return window.innerHeight || document.documentElement.clientHeight;
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/viewport-width */
+  Waypoint.viewportWidth = function () {
+    return document.documentElement.clientWidth;
+  };
+
+  Waypoint.adapters = [];
+
+  Waypoint.defaults = {
+    context: window,
+    continuous: true,
+    enabled: true,
+    group: 'default',
+    horizontal: false,
+    offset: 0
+  };
+
+  Waypoint.offsetAliases = {
+    'bottom-in-view': function bottomInView() {
+      return this.context.innerHeight() - this.adapter.outerHeight();
+    },
+    'right-in-view': function rightInView() {
+      return this.context.innerWidth() - this.adapter.outerWidth();
+    }
+  };
+
+  window.Waypoint = Waypoint;
+})();(function () {
+  'use strict';
+
+  function requestAnimationFrameShim(callback) {
+    window.setTimeout(callback, 1000 / 60);
+  }
+
+  var keyCounter = 0;
+  var contexts = {};
+  var Waypoint = window.Waypoint;
+  var oldWindowLoad = window.onload;
+
+  /* http://imakewebthings.com/waypoints/api/context */
+  function Context(element) {
+    this.element = element;
+    this.Adapter = Waypoint.Adapter;
+    this.adapter = new this.Adapter(element);
+    this.key = 'waypoint-context-' + keyCounter;
+    this.didScroll = false;
+    this.didResize = false;
+    this.oldScroll = {
+      x: this.adapter.scrollLeft(),
+      y: this.adapter.scrollTop()
+    };
+    this.waypoints = {
+      vertical: {},
+      horizontal: {}
+    };
+
+    element.waypointContextKey = this.key;
+    contexts[element.waypointContextKey] = this;
+    keyCounter += 1;
+    if (!Waypoint.windowContext) {
+      Waypoint.windowContext = true;
+      Waypoint.windowContext = new Context(window);
+    }
+
+    this.createThrottledScrollHandler();
+    this.createThrottledResizeHandler();
+  }
+
+  /* Private */
+  Context.prototype.add = function (waypoint) {
+    var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical';
+    this.waypoints[axis][waypoint.key] = waypoint;
+    this.refresh();
+  };
+
+  /* Private */
+  Context.prototype.checkEmpty = function () {
+    var horizontalEmpty = this.Adapter.isEmptyObject(this.waypoints.horizontal);
+    var verticalEmpty = this.Adapter.isEmptyObject(this.waypoints.vertical);
+    var isWindow = this.element == this.element.window;
+    if (horizontalEmpty && verticalEmpty && !isWindow) {
+      this.adapter.off('.waypoints');
+      delete contexts[this.key];
+    }
+  };
+
+  /* Private */
+  Context.prototype.createThrottledResizeHandler = function () {
+    var self = this;
+
+    function resizeHandler() {
+      self.handleResize();
+      self.didResize = false;
+    }
+
+    this.adapter.on('resize.waypoints', function () {
+      if (!self.didResize) {
+        self.didResize = true;
+        Waypoint.requestAnimationFrame(resizeHandler);
+      }
+    });
+  };
+
+  /* Private */
+  Context.prototype.createThrottledScrollHandler = function () {
+    var self = this;
+    function scrollHandler() {
+      self.handleScroll();
+      self.didScroll = false;
+    }
+
+    this.adapter.on('scroll.waypoints', function () {
+      if (!self.didScroll || Waypoint.isTouch) {
+        self.didScroll = true;
+        Waypoint.requestAnimationFrame(scrollHandler);
+      }
+    });
+  };
+
+  /* Private */
+  Context.prototype.handleResize = function () {
+    Waypoint.Context.refreshAll();
+  };
+
+  /* Private */
+  Context.prototype.handleScroll = function () {
+    var triggeredGroups = {};
+    var axes = {
+      horizontal: {
+        newScroll: this.adapter.scrollLeft(),
+        oldScroll: this.oldScroll.x,
+        forward: 'right',
+        backward: 'left'
+      },
+      vertical: {
+        newScroll: this.adapter.scrollTop(),
+        oldScroll: this.oldScroll.y,
+        forward: 'down',
+        backward: 'up'
+      }
+    };
+
+    for (var axisKey in axes) {
+      var axis = axes[axisKey];
+      var isForward = axis.newScroll > axis.oldScroll;
+      var direction = isForward ? axis.forward : axis.backward;
+
+      for (var waypointKey in this.waypoints[axisKey]) {
+        var waypoint = this.waypoints[axisKey][waypointKey];
+        if (waypoint.triggerPoint === null) {
+          continue;
+        }
+        var wasBeforeTriggerPoint = axis.oldScroll < waypoint.triggerPoint;
+        var nowAfterTriggerPoint = axis.newScroll >= waypoint.triggerPoint;
+        var crossedForward = wasBeforeTriggerPoint && nowAfterTriggerPoint;
+        var crossedBackward = !wasBeforeTriggerPoint && !nowAfterTriggerPoint;
+        if (crossedForward || crossedBackward) {
+          waypoint.queueTrigger(direction);
+          triggeredGroups[waypoint.group.id] = waypoint.group;
+        }
+      }
+    }
+
+    for (var groupKey in triggeredGroups) {
+      triggeredGroups[groupKey].flushTriggers();
+    }
+
+    this.oldScroll = {
+      x: axes.horizontal.newScroll,
+      y: axes.vertical.newScroll
+    };
+  };
+
+  /* Private */
+  Context.prototype.innerHeight = function () {
+    /*eslint-disable eqeqeq */
+    if (this.element == this.element.window) {
+      return Waypoint.viewportHeight();
+    }
+    /*eslint-enable eqeqeq */
+    return this.adapter.innerHeight();
+  };
+
+  /* Private */
+  Context.prototype.remove = function (waypoint) {
+    delete this.waypoints[waypoint.axis][waypoint.key];
+    this.checkEmpty();
+  };
+
+  /* Private */
+  Context.prototype.innerWidth = function () {
+    /*eslint-disable eqeqeq */
+    if (this.element == this.element.window) {
+      return Waypoint.viewportWidth();
+    }
+    /*eslint-enable eqeqeq */
+    return this.adapter.innerWidth();
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/context-destroy */
+  Context.prototype.destroy = function () {
+    var allWaypoints = [];
+    for (var axis in this.waypoints) {
+      for (var waypointKey in this.waypoints[axis]) {
+        allWaypoints.push(this.waypoints[axis][waypointKey]);
+      }
+    }
+    for (var i = 0, end = allWaypoints.length; i < end; i++) {
+      allWaypoints[i].destroy();
+    }
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/context-refresh */
+  Context.prototype.refresh = function () {
+    /*eslint-disable eqeqeq */
+    var isWindow = this.element == this.element.window;
+    /*eslint-enable eqeqeq */
+    var contextOffset = isWindow ? undefined : this.adapter.offset();
+    var triggeredGroups = {};
+    var axes;
+
+    this.handleScroll();
+    axes = {
+      horizontal: {
+        contextOffset: isWindow ? 0 : contextOffset.left,
+        contextScroll: isWindow ? 0 : this.oldScroll.x,
+        contextDimension: this.innerWidth(),
+        oldScroll: this.oldScroll.x,
+        forward: 'right',
+        backward: 'left',
+        offsetProp: 'left'
+      },
+      vertical: {
+        contextOffset: isWindow ? 0 : contextOffset.top,
+        contextScroll: isWindow ? 0 : this.oldScroll.y,
+        contextDimension: this.innerHeight(),
+        oldScroll: this.oldScroll.y,
+        forward: 'down',
+        backward: 'up',
+        offsetProp: 'top'
+      }
+    };
+
+    for (var axisKey in axes) {
+      var axis = axes[axisKey];
+      for (var waypointKey in this.waypoints[axisKey]) {
+        var waypoint = this.waypoints[axisKey][waypointKey];
+        var adjustment = waypoint.options.offset;
+        var oldTriggerPoint = waypoint.triggerPoint;
+        var elementOffset = 0;
+        var freshWaypoint = oldTriggerPoint == null;
+        var contextModifier, wasBeforeScroll, nowAfterScroll;
+        var triggeredBackward, triggeredForward;
+
+        if (waypoint.element !== waypoint.element.window) {
+          elementOffset = waypoint.adapter.offset()[axis.offsetProp];
+        }
+
+        if (typeof adjustment === 'function') {
+          adjustment = adjustment.apply(waypoint);
+        } else if (typeof adjustment === 'string') {
+          adjustment = parseFloat(adjustment);
+          if (waypoint.options.offset.indexOf('%') > -1) {
+            adjustment = Math.ceil(axis.contextDimension * adjustment / 100);
+          }
+        }
+
+        contextModifier = axis.contextScroll - axis.contextOffset;
+        waypoint.triggerPoint = Math.floor(elementOffset + contextModifier - adjustment);
+        wasBeforeScroll = oldTriggerPoint < axis.oldScroll;
+        nowAfterScroll = waypoint.triggerPoint >= axis.oldScroll;
+        triggeredBackward = wasBeforeScroll && nowAfterScroll;
+        triggeredForward = !wasBeforeScroll && !nowAfterScroll;
+
+        if (!freshWaypoint && triggeredBackward) {
+          waypoint.queueTrigger(axis.backward);
+          triggeredGroups[waypoint.group.id] = waypoint.group;
+        } else if (!freshWaypoint && triggeredForward) {
+          waypoint.queueTrigger(axis.forward);
+          triggeredGroups[waypoint.group.id] = waypoint.group;
+        } else if (freshWaypoint && axis.oldScroll >= waypoint.triggerPoint) {
+          waypoint.queueTrigger(axis.forward);
+          triggeredGroups[waypoint.group.id] = waypoint.group;
+        }
+      }
+    }
+
+    Waypoint.requestAnimationFrame(function () {
+      for (var groupKey in triggeredGroups) {
+        triggeredGroups[groupKey].flushTriggers();
+      }
+    });
+
+    return this;
+  };
+
+  /* Private */
+  Context.findOrCreateByElement = function (element) {
+    return Context.findByElement(element) || new Context(element);
+  };
+
+  /* Private */
+  Context.refreshAll = function () {
+    for (var contextId in contexts) {
+      contexts[contextId].refresh();
+    }
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/context-find-by-element */
+  Context.findByElement = function (element) {
+    return contexts[element.waypointContextKey];
+  };
+
+  window.onload = function () {
+    if (oldWindowLoad) {
+      oldWindowLoad();
+    }
+    Context.refreshAll();
+  };
+
+  Waypoint.requestAnimationFrame = function (callback) {
+    var requestFn = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || requestAnimationFrameShim;
+    requestFn.call(window, callback);
+  };
+  Waypoint.Context = Context;
+})();(function () {
+  'use strict';
+
+  function byTriggerPoint(a, b) {
+    return a.triggerPoint - b.triggerPoint;
+  }
+
+  function byReverseTriggerPoint(a, b) {
+    return b.triggerPoint - a.triggerPoint;
+  }
+
+  var groups = {
+    vertical: {},
+    horizontal: {}
+  };
+  var Waypoint = window.Waypoint;
+
+  /* http://imakewebthings.com/waypoints/api/group */
+  function Group(options) {
+    this.name = options.name;
+    this.axis = options.axis;
+    this.id = this.name + '-' + this.axis;
+    this.waypoints = [];
+    this.clearTriggerQueues();
+    groups[this.axis][this.name] = this;
+  }
+
+  /* Private */
+  Group.prototype.add = function (waypoint) {
+    this.waypoints.push(waypoint);
+  };
+
+  /* Private */
+  Group.prototype.clearTriggerQueues = function () {
+    this.triggerQueues = {
+      up: [],
+      down: [],
+      left: [],
+      right: []
+    };
+  };
+
+  /* Private */
+  Group.prototype.flushTriggers = function () {
+    for (var direction in this.triggerQueues) {
+      var waypoints = this.triggerQueues[direction];
+      var reverse = direction === 'up' || direction === 'left';
+      waypoints.sort(reverse ? byReverseTriggerPoint : byTriggerPoint);
+      for (var i = 0, end = waypoints.length; i < end; i += 1) {
+        var waypoint = waypoints[i];
+        if (waypoint.options.continuous || i === waypoints.length - 1) {
+          waypoint.trigger([direction]);
+        }
+      }
+    }
+    this.clearTriggerQueues();
+  };
+
+  /* Private */
+  Group.prototype.next = function (waypoint) {
+    this.waypoints.sort(byTriggerPoint);
+    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints);
+    var isLast = index === this.waypoints.length - 1;
+    return isLast ? null : this.waypoints[index + 1];
+  };
+
+  /* Private */
+  Group.prototype.previous = function (waypoint) {
+    this.waypoints.sort(byTriggerPoint);
+    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints);
+    return index ? this.waypoints[index - 1] : null;
+  };
+
+  /* Private */
+  Group.prototype.queueTrigger = function (waypoint, direction) {
+    this.triggerQueues[direction].push(waypoint);
+  };
+
+  /* Private */
+  Group.prototype.remove = function (waypoint) {
+    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints);
+    if (index > -1) {
+      this.waypoints.splice(index, 1);
+    }
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/first */
+  Group.prototype.first = function () {
+    return this.waypoints[0];
+  };
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/last */
+  Group.prototype.last = function () {
+    return this.waypoints[this.waypoints.length - 1];
+  };
+
+  /* Private */
+  Group.findOrCreate = function (options) {
+    return groups[options.axis][options.name] || new Group(options);
+  };
+
+  Waypoint.Group = Group;
+})();(function () {
+  'use strict';
+
+  var Waypoint = window.Waypoint;
+
+  function isWindow(element) {
+    return element === element.window;
+  }
+
+  function getWindow(element) {
+    if (isWindow(element)) {
+      return element;
+    }
+    return element.defaultView;
+  }
+
+  function NoFrameworkAdapter(element) {
+    this.element = element;
+    this.handlers = {};
+  }
+
+  NoFrameworkAdapter.prototype.innerHeight = function () {
+    var isWin = isWindow(this.element);
+    return isWin ? this.element.innerHeight : this.element.clientHeight;
+  };
+
+  NoFrameworkAdapter.prototype.innerWidth = function () {
+    var isWin = isWindow(this.element);
+    return isWin ? this.element.innerWidth : this.element.clientWidth;
+  };
+
+  NoFrameworkAdapter.prototype.off = function (event, handler) {
+    function removeListeners(element, listeners, handler) {
+      for (var i = 0, end = listeners.length - 1; i < end; i++) {
+        var listener = listeners[i];
+        if (!handler || handler === listener) {
+          element.removeEventListener(listener);
+        }
+      }
+    }
+
+    var eventParts = event.split('.');
+    var eventType = eventParts[0];
+    var namespace = eventParts[1];
+    var element = this.element;
+
+    if (namespace && this.handlers[namespace] && eventType) {
+      removeListeners(element, this.handlers[namespace][eventType], handler);
+      this.handlers[namespace][eventType] = [];
+    } else if (eventType) {
+      for (var ns in this.handlers) {
+        removeListeners(element, this.handlers[ns][eventType] || [], handler);
+        this.handlers[ns][eventType] = [];
+      }
+    } else if (namespace && this.handlers[namespace]) {
+      for (var type in this.handlers[namespace]) {
+        removeListeners(element, this.handlers[namespace][type], handler);
+      }
+      this.handlers[namespace] = {};
+    }
+  };
+
+  /* Adapted from jQuery 1.x offset() */
+  NoFrameworkAdapter.prototype.offset = function () {
+    if (!this.element.ownerDocument) {
+      return null;
+    }
+
+    var documentElement = this.element.ownerDocument.documentElement;
+    var win = getWindow(this.element.ownerDocument);
+    var rect = {
+      top: 0,
+      left: 0
+    };
+
+    if (this.element.getBoundingClientRect) {
+      rect = this.element.getBoundingClientRect();
+    }
+
+    return {
+      top: rect.top + win.pageYOffset - documentElement.clientTop,
+      left: rect.left + win.pageXOffset - documentElement.clientLeft
+    };
+  };
+
+  NoFrameworkAdapter.prototype.on = function (event, handler) {
+    var eventParts = event.split('.');
+    var eventType = eventParts[0];
+    var namespace = eventParts[1] || '__default';
+    var nsHandlers = this.handlers[namespace] = this.handlers[namespace] || {};
+    var nsTypeList = nsHandlers[eventType] = nsHandlers[eventType] || [];
+
+    nsTypeList.push(handler);
+    this.element.addEventListener(eventType, handler);
+  };
+
+  NoFrameworkAdapter.prototype.outerHeight = function (includeMargin) {
+    var height = this.innerHeight();
+    var computedStyle;
+
+    if (includeMargin && !isWindow(this.element)) {
+      computedStyle = window.getComputedStyle(this.element);
+      height += parseInt(computedStyle.marginTop, 10);
+      height += parseInt(computedStyle.marginBottom, 10);
+    }
+
+    return height;
+  };
+
+  NoFrameworkAdapter.prototype.outerWidth = function (includeMargin) {
+    var width = this.innerWidth();
+    var computedStyle;
+
+    if (includeMargin && !isWindow(this.element)) {
+      computedStyle = window.getComputedStyle(this.element);
+      width += parseInt(computedStyle.marginLeft, 10);
+      width += parseInt(computedStyle.marginRight, 10);
+    }
+
+    return width;
+  };
+
+  NoFrameworkAdapter.prototype.scrollLeft = function () {
+    var win = getWindow(this.element);
+    return win ? win.pageXOffset : this.element.scrollLeft;
+  };
+
+  NoFrameworkAdapter.prototype.scrollTop = function () {
+    var win = getWindow(this.element);
+    return win ? win.pageYOffset : this.element.scrollTop;
+  };
+
+  NoFrameworkAdapter.extend = function () {
+    var args = Array.prototype.slice.call(arguments);
+
+    function merge(target, obj) {
+      if ((typeof target === 'undefined' ? 'undefined' : _typeof(target)) === 'object' && (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object') {
+        for (var key in obj) {
+          if (obj.hasOwnProperty(key)) {
+            target[key] = obj[key];
+          }
+        }
+      }
+
+      return target;
+    }
+
+    for (var i = 1, end = args.length; i < end; i++) {
+      merge(args[0], args[i]);
+    }
+    return args[0];
+  };
+
+  NoFrameworkAdapter.inArray = function (element, array, i) {
+    return array == null ? -1 : array.indexOf(element, i);
+  };
+
+  NoFrameworkAdapter.isEmptyObject = function (obj) {
+    /* eslint no-unused-vars: 0 */
+    for (var name in obj) {
+      return false;
+    }
+    return true;
+  };
+
+  Waypoint.adapters.push({
+    name: 'noframework',
+    Adapter: NoFrameworkAdapter
+  });
+  Waypoint.Adapter = NoFrameworkAdapter;
+})();
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/**
+ * SSR Window 1.0.1
+ * Better handling for window object in SSR environment
+ * https://github.com/nolimits4web/ssr-window
+ *
+ * Copyright 2018, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: July 18, 2018
+ */
+var doc = typeof document === 'undefined' ? {
+  body: {},
+  addEventListener: function addEventListener() {},
+  removeEventListener: function removeEventListener() {},
+  activeElement: {
+    blur: function blur() {},
+    nodeName: ''
+  },
+  querySelector: function querySelector() {
+    return null;
+  },
+  querySelectorAll: function querySelectorAll() {
+    return [];
+  },
+  getElementById: function getElementById() {
+    return null;
+  },
+  createEvent: function createEvent() {
+    return {
+      initEvent: function initEvent() {}
+    };
+  },
+  createElement: function createElement() {
+    return {
+      children: [],
+      childNodes: [],
+      style: {},
+      setAttribute: function setAttribute() {},
+      getElementsByTagName: function getElementsByTagName() {
+        return [];
+      }
+    };
+  },
+  location: { hash: '' }
+} : document; // eslint-disable-line
+
+var win = typeof window === 'undefined' ? {
+  document: doc,
+  navigator: {
+    userAgent: ''
+  },
+  location: {},
+  history: {},
+  CustomEvent: function CustomEvent() {
+    return this;
+  },
+  addEventListener: function addEventListener() {},
+  removeEventListener: function removeEventListener() {},
+  getComputedStyle: function getComputedStyle() {
+    return {
+      getPropertyValue: function getPropertyValue() {
+        return '';
+      }
+    };
+  },
+  Image: function Image() {},
+  Date: function Date() {},
+  screen: {},
+  setTimeout: function setTimeout() {},
+  clearTimeout: function clearTimeout() {}
+} : window; // eslint-disable-line
+
+exports.window = win;
+exports.document = doc;
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _swiper = __webpack_require__(5);
+
+var _swiper2 = _interopRequireDefault(_swiper);
+
+var _RevealOnScroll = __webpack_require__(7);
+
+var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
+
+var _StickyHeader = __webpack_require__(8);
+
+var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
+
+var _Menu = __webpack_require__(10);
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+new _RevealOnScroll2.default((0, _jquery2.default)(".secondpage"), "85%");
+new _RevealOnScroll2.default((0, _jquery2.default)(".thirdpage"), "85%");
+var stickyHeader = new _StickyHeader2.default();
+var menu = new _Menu2.default();
+
+var mySwiper1 = new _swiper2.default('.swiper-1', {
+  slidesPerView: 5,
+  spaceBetween: 10,
+  breakpoints: {
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 10
+    },
+    800: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    530: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    }
+  },
+  navigation: {
+    nextEl: '.swiper-button-next-1',
+    prevEl: '.swiper-button-prev-1'
+  }
+});
+
+var mySwiper2 = new _swiper2.default('.swiper-2', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  navigation: {
+    nextEl: '.swiper-button-next-2',
+    prevEl: '.swiper-button-prev-2'
+  }
+});
+
+var mySwiper3 = new _swiper2.default('.swiper-3', {
+  slidesPerView: 4,
+  spaceBetween: 50,
+  themeColor: '#1f252a',
+  breakpoints: {
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 10
+    },
+    800: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    530: {
+      slidesPerView: 1,
+      spaceBetween: 0
+    }
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+
+});
+
+function larger(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".fourthpage__icon")) {
+    target.parent().addClass('fourthpage__slider--bigger');
+    target.parent().children('.fourthpage__description').addClass('fourthpage__description--visible');
+  }
+}
+
+function smaller(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".fourthpage__icon")) {
+    target.parent().removeClass('fourthpage__slider--bigger');
+    target.parent().children('.fourthpage__description').removeClass('fourthpage__description--visible');
+  }
+}
+
+(0, _jquery2.default)(".fourthpage__icon").mouseover(larger);
+(0, _jquery2.default)(".fourthpage__icon").mouseout(smaller);
+
+function larger2(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".ace__img")) {
+    target.addClass('ace__img--bigger');
+  }
+}
+
+function smaller2(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() > 1200 && target.is(".ace__img")) {
+    target.removeClass('ace__img--bigger');
+  }
+}
+
+(0, _jquery2.default)(".ace__img").mouseover(larger2);
+(0, _jquery2.default)(".ace__img").mouseout(smaller2);
+
+function showMore(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() < 1200 && target.is(".fifthpage__small-screen-section-title-and-description__showmore")) {
+    target.parent().addClass('fifthpage__3--not-visible');
+    target.parent().parent().find('.fifthpage__4').addClass('fifthpage__4--visible');
+  }
+}
+
+function showMoreReverse(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() < 1200 && target.is(".fifthpage__small-screen-section-title-and-description__showmore--reverse")) {
+    target.parent().parent().find('.fifthpage__4').removeClass('fifthpage__4--visible');
+    target.parent().parent().find('.fifthpage__3').removeClass('fifthpage__3--not-visible');
+  }
+}
+
+(0, _jquery2.default)(".fifthpage__small-screen-section-title-and-description__showmore").click(showMore);
+(0, _jquery2.default)(".fifthpage__small-screen-section-title-and-description__showmore--reverse").click(showMoreReverse);
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10455,7 +11227,7 @@ module.exports = function (module) {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10479,9 +11251,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                                                                                                                                                                                                                                                                * Released on: February 22, 2019
                                                                                                                                                                                                                                                                                */
 
-var _dom = __webpack_require__(5);
+var _dom = __webpack_require__(6);
 
-var _ssrWindow = __webpack_require__(0);
+var _ssrWindow = __webpack_require__(2);
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
@@ -17732,7 +18504,7 @@ Swiper.use(components);
 exports.default = Swiper;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17743,7 +18515,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.scroll = exports.resize = exports.touchmove = exports.touchend = exports.touchstart = exports.mouseover = exports.mouseout = exports.mouseleave = exports.mouseenter = exports.mouseup = exports.mousemove = exports.mousedown = exports.change = exports.submit = exports.keypress = exports.keydown = exports.keyup = exports.focusout = exports.focusin = exports.focus = exports.blur = exports.click = exports.stop = exports.animate = exports.scrollLeft = exports.scrollTop = exports.scrollTo = exports.empty = exports.add = exports.detach = exports.remove = exports.children = exports.find = exports.closest = exports.parents = exports.parent = exports.siblings = exports.prevAll = exports.prev = exports.nextAll = exports.next = exports.insertAfter = exports.insertBefore = exports.prependTo = exports.prepend = exports.appendTo = exports.append = exports.eq = exports.index = exports.indexOf = exports.is = exports.text = exports.html = exports.map = exports.filter = exports.forEach = exports.each = exports.toArray = exports.css = exports.styles = exports.show = exports.hide = exports.offset = exports.outerHeight = exports.height = exports.outerWidth = exports.width = exports.animationEnd = exports.transitionEnd = exports.trigger = exports.once = exports.off = exports.on = exports.transition = exports.transform = exports.val = exports.dataset = exports.removeData = exports.data = exports.prop = exports.removeAttr = exports.attr = exports.toggleClass = exports.hasClass = exports.removeClass = exports.addClass = exports.$ = undefined;
 
-var _ssrWindow = __webpack_require__(0);
+var _ssrWindow = __webpack_require__(2);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } } /**
                                                                                                                                                            * Dom7 2.1.3
@@ -19352,6 +20124,598 @@ exports.touchend = touchend;
 exports.touchmove = touchmove;
 exports.resize = resize;
 exports.scroll = scroll;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _noframework = __webpack_require__(1);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var RevealOnScroll = function () {
+    function RevealOnScroll(els, offset) {
+        _classCallCheck(this, RevealOnScroll);
+
+        this.itemsToReveal = els;
+        this.offsetPercentage = offset;
+        this.hideInitially();
+        this.createWaypoints();
+    }
+
+    _createClass(RevealOnScroll, [{
+        key: 'hideInitially',
+        value: function hideInitially() {
+            this.itemsToReveal.addClass("reveal-item");
+        }
+    }, {
+        key: 'createWaypoints',
+        value: function createWaypoints() {
+            var that = this;
+            this.itemsToReveal.each(function () {
+                var currentItem = this;
+                new Waypoint({
+                    element: currentItem,
+                    handler: function handler() {
+                        (0, _jquery2.default)(currentItem).addClass("reveal-item--is-visible");
+                    },
+                    offset: that.offsetPercentage
+                });
+            });
+        }
+    }]);
+
+    return RevealOnScroll;
+}();
+
+exports.default = RevealOnScroll;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _noframework = __webpack_require__(1);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+var _jquerySmoothScroll = __webpack_require__(9);
+
+var _jquerySmoothScroll2 = _interopRequireDefault(_jquerySmoothScroll);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var StickyHeader = function () {
+    function StickyHeader() {
+        _classCallCheck(this, StickyHeader);
+
+        this.appHeader = (0, _jquery2.default)(".app-header");
+        this.menuContent = (0, _jquery2.default)(".app-menu");
+        this.menuIcon = (0, _jquery2.default)(".app-header__menu-icon");
+        this.headerTriggerElement = (0, _jquery2.default)("#fourthpage");
+        this.createHeaderWaypoint();
+        this.moverLinks = (0, _jquery2.default)(".smooth-mover");
+        this.addSmoothScrolling();
+    }
+
+    _createClass(StickyHeader, [{
+        key: 'addSmoothScrolling',
+        value: function addSmoothScrolling() {
+            this.moverLinks.smoothScroll();
+        }
+    }, {
+        key: 'createHeaderWaypoint',
+        value: function createHeaderWaypoint() {
+            var that = this;
+            new Waypoint({
+                element: this.headerTriggerElement[0],
+                handler: function handler(direction) {
+                    if (direction == "down") {
+                        that.appHeader.addClass("app-header--visible");
+                    } else {
+                        that.appHeader.removeClass("app-header--visible");
+                        that.menuContent.removeClass("app-menu--is-expanded");
+                        that.menuIcon.removeClass("app-header__menu-icon--close-x");
+                    }
+                },
+                offset: "10%"
+            });
+        }
+    }]);
+
+    return StickyHeader;
+}();
+
+exports.default = StickyHeader;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*!
+ * jQuery Smooth Scroll - v2.2.0 - 2017-05-05
+ * https://github.com/kswedberg/jquery-smooth-scroll
+ * Copyright (c) 2017 Karl Swedberg
+ * Licensed MIT
+ */
+
+(function (factory) {
+  if (true) {
+    // AMD. Register as an anonymous module.
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(0)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ((typeof module === 'undefined' ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+    // CommonJS
+    factory(require('jquery'));
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+})(function ($) {
+
+  var version = '2.2.0';
+  var optionOverrides = {};
+  var defaults = {
+    exclude: [],
+    excludeWithin: [],
+    offset: 0,
+
+    // one of 'top' or 'left'
+    direction: 'top',
+
+    // if set, bind click events through delegation
+    //  supported since jQuery 1.4.2
+    delegateSelector: null,
+
+    // jQuery set of elements you wish to scroll (for $.smoothScroll).
+    //  if null (default), $('html, body').firstScrollable() is used.
+    scrollElement: null,
+
+    // only use if you want to override default behavior
+    scrollTarget: null,
+
+    // automatically focus the target element after scrolling to it
+    autoFocus: false,
+
+    // fn(opts) function to be called before scrolling occurs.
+    // `this` is the element(s) being scrolled
+    beforeScroll: function beforeScroll() {},
+
+    // fn(opts) function to be called after scrolling occurs.
+    // `this` is the triggering element
+    afterScroll: function afterScroll() {},
+
+    // easing name. jQuery comes with "swing" and "linear." For others, you'll need an easing plugin
+    // from jQuery UI or elsewhere
+    easing: 'swing',
+
+    // speed can be a number or 'auto'
+    // if 'auto', the speed will be calculated based on the formula:
+    // (current scroll position - target scroll position) / autoCoeffic
+    speed: 400,
+
+    // coefficient for "auto" speed
+    autoCoefficient: 2,
+
+    // $.fn.smoothScroll only: whether to prevent the default click action
+    preventDefault: true
+  };
+
+  var getScrollable = function getScrollable(opts) {
+    var scrollable = [];
+    var scrolled = false;
+    var dir = opts.dir && opts.dir === 'left' ? 'scrollLeft' : 'scrollTop';
+
+    this.each(function () {
+      var el = $(this);
+
+      if (this === document || this === window) {
+        return;
+      }
+
+      if (document.scrollingElement && (this === document.documentElement || this === document.body)) {
+        scrollable.push(document.scrollingElement);
+
+        return false;
+      }
+
+      if (el[dir]() > 0) {
+        scrollable.push(this);
+      } else {
+        // if scroll(Top|Left) === 0, nudge the element 1px and see if it moves
+        el[dir](1);
+        scrolled = el[dir]() > 0;
+
+        if (scrolled) {
+          scrollable.push(this);
+        }
+        // then put it back, of course
+        el[dir](0);
+      }
+    });
+
+    if (!scrollable.length) {
+      this.each(function () {
+        // If no scrollable elements and <html> has scroll-behavior:smooth because
+        // "When this property is specified on the root element, it applies to the viewport instead."
+        // and "The scroll-behavior property of the … body element is *not* propagated to the viewport."
+        // → https://drafts.csswg.org/cssom-view/#propdef-scroll-behavior
+        if (this === document.documentElement && $(this).css('scrollBehavior') === 'smooth') {
+          scrollable = [this];
+        }
+
+        // If still no scrollable elements, fall back to <body>,
+        // if it's in the jQuery collection
+        // (doing this because Safari sets scrollTop async,
+        // so can't set it to 1 and immediately get the value.)
+        if (!scrollable.length && this.nodeName === 'BODY') {
+          scrollable = [this];
+        }
+      });
+    }
+
+    // Use the first scrollable element if we're calling firstScrollable()
+    if (opts.el === 'first' && scrollable.length > 1) {
+      scrollable = [scrollable[0]];
+    }
+
+    return scrollable;
+  };
+
+  var rRelative = /^([\-\+]=)(\d+)/;
+
+  $.fn.extend({
+    scrollable: function scrollable(dir) {
+      var scrl = getScrollable.call(this, { dir: dir });
+
+      return this.pushStack(scrl);
+    },
+    firstScrollable: function firstScrollable(dir) {
+      var scrl = getScrollable.call(this, { el: 'first', dir: dir });
+
+      return this.pushStack(scrl);
+    },
+
+    smoothScroll: function smoothScroll(options, extra) {
+      options = options || {};
+
+      if (options === 'options') {
+        if (!extra) {
+          return this.first().data('ssOpts');
+        }
+
+        return this.each(function () {
+          var $this = $(this);
+          var opts = $.extend($this.data('ssOpts') || {}, extra);
+
+          $(this).data('ssOpts', opts);
+        });
+      }
+
+      var opts = $.extend({}, $.fn.smoothScroll.defaults, options);
+
+      var clickHandler = function clickHandler(event) {
+        var escapeSelector = function escapeSelector(str) {
+          return str.replace(/(:|\.|\/)/g, '\\$1');
+        };
+
+        var link = this;
+        var $link = $(this);
+        var thisOpts = $.extend({}, opts, $link.data('ssOpts') || {});
+        var exclude = opts.exclude;
+        var excludeWithin = thisOpts.excludeWithin;
+        var elCounter = 0;
+        var ewlCounter = 0;
+        var include = true;
+        var clickOpts = {};
+        var locationPath = $.smoothScroll.filterPath(location.pathname);
+        var linkPath = $.smoothScroll.filterPath(link.pathname);
+        var hostMatch = location.hostname === link.hostname || !link.hostname;
+        var pathMatch = thisOpts.scrollTarget || linkPath === locationPath;
+        var thisHash = escapeSelector(link.hash);
+
+        if (thisHash && !$(thisHash).length) {
+          include = false;
+        }
+
+        if (!thisOpts.scrollTarget && (!hostMatch || !pathMatch || !thisHash)) {
+          include = false;
+        } else {
+          while (include && elCounter < exclude.length) {
+            if ($link.is(escapeSelector(exclude[elCounter++]))) {
+              include = false;
+            }
+          }
+
+          while (include && ewlCounter < excludeWithin.length) {
+            if ($link.closest(excludeWithin[ewlCounter++]).length) {
+              include = false;
+            }
+          }
+        }
+
+        if (include) {
+          if (thisOpts.preventDefault) {
+            event.preventDefault();
+          }
+
+          $.extend(clickOpts, thisOpts, {
+            scrollTarget: thisOpts.scrollTarget || thisHash,
+            link: link
+          });
+
+          $.smoothScroll(clickOpts);
+        }
+      };
+
+      if (options.delegateSelector !== null) {
+        this.off('click.smoothscroll', options.delegateSelector).on('click.smoothscroll', options.delegateSelector, clickHandler);
+      } else {
+        this.off('click.smoothscroll').on('click.smoothscroll', clickHandler);
+      }
+
+      return this;
+    }
+  });
+
+  var getExplicitOffset = function getExplicitOffset(val) {
+    var explicit = { relative: '' };
+    var parts = typeof val === 'string' && rRelative.exec(val);
+
+    if (typeof val === 'number') {
+      explicit.px = val;
+    } else if (parts) {
+      explicit.relative = parts[1];
+      explicit.px = parseFloat(parts[2]) || 0;
+    }
+
+    return explicit;
+  };
+
+  var onAfterScroll = function onAfterScroll(opts) {
+    var $tgt = $(opts.scrollTarget);
+
+    if (opts.autoFocus && $tgt.length) {
+      $tgt[0].focus();
+
+      if (!$tgt.is(document.activeElement)) {
+        $tgt.prop({ tabIndex: -1 });
+        $tgt[0].focus();
+      }
+    }
+
+    opts.afterScroll.call(opts.link, opts);
+  };
+
+  $.smoothScroll = function (options, px) {
+    if (options === 'options' && (typeof px === 'undefined' ? 'undefined' : _typeof(px)) === 'object') {
+      return $.extend(optionOverrides, px);
+    }
+    var opts, $scroller, speed, delta;
+    var explicitOffset = getExplicitOffset(options);
+    var scrollTargetOffset = {};
+    var scrollerOffset = 0;
+    var offPos = 'offset';
+    var scrollDir = 'scrollTop';
+    var aniProps = {};
+    var aniOpts = {};
+
+    if (explicitOffset.px) {
+      opts = $.extend({ link: null }, $.fn.smoothScroll.defaults, optionOverrides);
+    } else {
+      opts = $.extend({ link: null }, $.fn.smoothScroll.defaults, options || {}, optionOverrides);
+
+      if (opts.scrollElement) {
+        offPos = 'position';
+
+        if (opts.scrollElement.css('position') === 'static') {
+          opts.scrollElement.css('position', 'relative');
+        }
+      }
+
+      if (px) {
+        explicitOffset = getExplicitOffset(px);
+      }
+    }
+
+    scrollDir = opts.direction === 'left' ? 'scrollLeft' : scrollDir;
+
+    if (opts.scrollElement) {
+      $scroller = opts.scrollElement;
+
+      if (!explicitOffset.px && !/^(?:HTML|BODY)$/.test($scroller[0].nodeName)) {
+        scrollerOffset = $scroller[scrollDir]();
+      }
+    } else {
+      $scroller = $('html, body').firstScrollable(opts.direction);
+    }
+
+    // beforeScroll callback function must fire before calculating offset
+    opts.beforeScroll.call($scroller, opts);
+
+    scrollTargetOffset = explicitOffset.px ? explicitOffset : {
+      relative: '',
+      px: $(opts.scrollTarget)[offPos]() && $(opts.scrollTarget)[offPos]()[opts.direction] || 0
+    };
+
+    aniProps[scrollDir] = scrollTargetOffset.relative + (scrollTargetOffset.px + scrollerOffset + opts.offset);
+
+    speed = opts.speed;
+
+    // automatically calculate the speed of the scroll based on distance / coefficient
+    if (speed === 'auto') {
+
+      // $scroller[scrollDir]() is position before scroll, aniProps[scrollDir] is position after
+      // When delta is greater, speed will be greater.
+      delta = Math.abs(aniProps[scrollDir] - $scroller[scrollDir]());
+
+      // Divide the delta by the coefficient
+      speed = delta / opts.autoCoefficient;
+    }
+
+    aniOpts = {
+      duration: speed,
+      easing: opts.easing,
+      complete: function complete() {
+        onAfterScroll(opts);
+      }
+    };
+
+    if (opts.step) {
+      aniOpts.step = opts.step;
+    }
+
+    if ($scroller.length) {
+      $scroller.stop().animate(aniProps, aniOpts);
+    } else {
+      onAfterScroll(opts);
+    }
+  };
+
+  $.smoothScroll.version = version;
+  $.smoothScroll.filterPath = function (string) {
+    string = string || '';
+
+    return string.replace(/^\//, '').replace(/(?:index|default).[a-zA-Z]{3,4}$/, '').replace(/\/$/, '');
+  };
+
+  // default options
+  $.fn.smoothScroll.defaults = defaults;
+});
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _noframework = __webpack_require__(1);
+
+var _noframework2 = _interopRequireDefault(_noframework);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Menu = function () {
+    function Menu() {
+        _classCallCheck(this, Menu);
+
+        this.menuIcon = (0, _jquery2.default)(".app-header__menu-icon");
+        this.menuContent = (0, _jquery2.default)(".app-menu");
+        this.menuItem = (0, _jquery2.default)(".app-menu__item");
+        this.menuLinks = (0, _jquery2.default)(".app-menu a");
+        this.pageSections = (0, _jquery2.default)(".page-section");
+        this.events();
+        this.createPageSectionWaypoints();
+    }
+
+    _createClass(Menu, [{
+        key: 'events',
+        value: function events() {
+            this.menuIcon.click(this.toggleTheMenu.bind(this));
+            this.menuItem.click(this.closeTheMenu.bind(this));
+            console.log(this.pageSections);
+            console.log(this.menuLinks);
+        }
+    }, {
+        key: 'toggleTheMenu',
+        value: function toggleTheMenu() {
+            this.menuContent.toggleClass("app-menu--is-expanded");
+            this.menuIcon.toggleClass("app-header__menu-icon--close-x");
+        }
+    }, {
+        key: 'closeTheMenu',
+        value: function closeTheMenu() {
+            this.menuContent.removeClass("app-menu--is-expanded");
+            this.menuIcon.toggleClass("app-header__menu-icon--close-x");
+        }
+    }, {
+        key: 'createPageSectionWaypoints',
+        value: function createPageSectionWaypoints() {
+            var that = this;
+            this.pageSections.each(function () {
+                var currentPageSection = this;
+                new Waypoint({
+                    element: currentPageSection,
+                    handler: function handler(direction) {
+                        if (direction == "down") {
+                            var matchingMenuLink = currentPageSection.getAttribute("data-matching-link");
+                            that.menuLinks.removeClass("app-menu--is-current-link");
+                            (0, _jquery2.default)(matchingMenuLink).addClass("app-menu--is-current-link");
+                        }
+                    },
+                    offset: "40%"
+                });
+
+                new Waypoint({
+                    element: currentPageSection,
+                    handler: function handler(direction) {
+                        if (direction == "up") {
+                            var matchingMenuLink = currentPageSection.getAttribute("data-matching-link");
+                            that.menuLinks.removeClass("app-menu--is-current-link");
+                            (0, _jquery2.default)(matchingMenuLink).addClass("app-menu--is-current-link");
+                        }
+                    },
+                    offset: "-40%"
+                });
+            });
+        }
+    }]);
+
+    return Menu;
+}();
+
+exports.default = Menu;
 
 /***/ })
 /******/ ]);
