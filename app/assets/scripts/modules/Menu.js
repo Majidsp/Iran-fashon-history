@@ -15,8 +15,6 @@ class Menu {
     events() {
         this.menuIcon.click(this.toggleTheMenu.bind(this));
         this.menuItem.click(this.closeTheMenu.bind(this));
-        console.log(this.pageSections);
-        console.log(this.menuLinks);
     }
 
     toggleTheMenu() {
