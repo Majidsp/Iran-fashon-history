@@ -102,8 +102,17 @@ function smaller2(ev) {
   }
 }
 
+function larger3(ev) {
+  let target = $(ev.target);
+  if($(window).width() < 1200 && target.is(".ace__img") ) {
+    target.toggleClass('ace__img--bigger');
+  }
+}
+
 $(".ace__img").mouseover(larger2);
 $(".ace__img").mouseout(smaller2);
+$(".ace__img").click(larger3);
+
 
 function showMore(ev) {
   let target = $(ev.target);

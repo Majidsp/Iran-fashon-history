@@ -11174,8 +11174,16 @@ function smaller2(ev) {
   }
 }
 
+function larger3(ev) {
+  var target = (0, _jquery2.default)(ev.target);
+  if ((0, _jquery2.default)(window).width() < 1200 && target.is(".ace__img")) {
+    target.toggleClass('ace__img--bigger');
+  }
+}
+
 (0, _jquery2.default)(".ace__img").mouseover(larger2);
 (0, _jquery2.default)(".ace__img").mouseout(smaller2);
+(0, _jquery2.default)(".ace__img").click(larger3);
 
 function showMore(ev) {
   var target = (0, _jquery2.default)(ev.target);
