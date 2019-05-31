@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Swiper from 'swiper';
+import Sliders from './modules/Slider';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import Menu from './modules/Menu';
@@ -9,64 +9,13 @@ new RevealOnScroll($(".secondpage"), "85%");
 new RevealOnScroll($(".thirdpage"), "85%");
 const stickyHeader = new StickyHeader();
 const menu = new Menu();
+const sliders = new Sliders();
 
 
-var mySwiper1 = new Swiper('.swiper-1', {
-    slidesPerView: 5,
-    spaceBetween: 10,
-    breakpoints: {
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 10,
-      },
-      800: {
-        slidesPerView: 2,
-        spaceBetween: 10,
-      },
-      530: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-      }
-    },
-    navigation: {
-        nextEl: '.swiper-button-next-1',
-        prevEl: '.swiper-button-prev-1',
-      },
-});
 
-var mySwiper2 = new Swiper('.swiper-2', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  navigation: {
-      nextEl: '.swiper-button-next-2',
-      prevEl: '.swiper-button-prev-2',
-    },
-});
 
-var mySwiper3 = new Swiper('.swiper-3', {
-  slidesPerView: 4,
-  spaceBetween: 50,
-  themeColor: '#1f252a',
-  breakpoints: {
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 10,
-    },
-    800: {
-      slidesPerView: 2,
-      spaceBetween: 10,
-    },
-    530: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-    }
-  },
-  navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    
-});
+
+
 
 
 function larger(ev) {

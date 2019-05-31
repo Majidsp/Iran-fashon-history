@@ -11091,19 +11091,19 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _swiper = __webpack_require__(5);
+var _Slider = __webpack_require__(5);
 
-var _swiper2 = _interopRequireDefault(_swiper);
+var _Slider2 = _interopRequireDefault(_Slider);
 
-var _RevealOnScroll = __webpack_require__(7);
+var _RevealOnScroll = __webpack_require__(8);
 
 var _RevealOnScroll2 = _interopRequireDefault(_RevealOnScroll);
 
-var _StickyHeader = __webpack_require__(8);
+var _StickyHeader = __webpack_require__(9);
 
 var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
-var _Menu = __webpack_require__(10);
+var _Menu = __webpack_require__(11);
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -11113,63 +11113,7 @@ new _RevealOnScroll2.default((0, _jquery2.default)(".secondpage"), "85%");
 new _RevealOnScroll2.default((0, _jquery2.default)(".thirdpage"), "85%");
 var stickyHeader = new _StickyHeader2.default();
 var menu = new _Menu2.default();
-
-var mySwiper1 = new _swiper2.default('.swiper-1', {
-  slidesPerView: 5,
-  spaceBetween: 10,
-  breakpoints: {
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 10
-    },
-    800: {
-      slidesPerView: 2,
-      spaceBetween: 10
-    },
-    530: {
-      slidesPerView: 1,
-      spaceBetween: 0
-    }
-  },
-  navigation: {
-    nextEl: '.swiper-button-next-1',
-    prevEl: '.swiper-button-prev-1'
-  }
-});
-
-var mySwiper2 = new _swiper2.default('.swiper-2', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  navigation: {
-    nextEl: '.swiper-button-next-2',
-    prevEl: '.swiper-button-prev-2'
-  }
-});
-
-var mySwiper3 = new _swiper2.default('.swiper-3', {
-  slidesPerView: 4,
-  spaceBetween: 50,
-  themeColor: '#1f252a',
-  breakpoints: {
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 10
-    },
-    800: {
-      slidesPerView: 2,
-      spaceBetween: 10
-    },
-    530: {
-      slidesPerView: 1,
-      spaceBetween: 0
-    }
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }
-
-});
+var sliders = new _Slider2.default();
 
 function larger(ev) {
   var target = (0, _jquery2.default)(ev.target);
@@ -11242,6 +11186,109 @@ function showMoreReverse(ev) {
 
 
 Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _swiper = __webpack_require__(6);
+
+var _swiper2 = _interopRequireDefault(_swiper);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Sliders = function () {
+    function Sliders() {
+        _classCallCheck(this, Sliders);
+
+        this.initializeSlider1();
+        this.initializeSlider2();
+        this.initializeSlider3();
+    }
+
+    _createClass(Sliders, [{
+        key: 'initializeSlider1',
+        value: function initializeSlider1() {
+            var mySwiper1 = new _swiper2.default('.swiper-1', {
+                slidesPerView: 5,
+                spaceBetween: 10,
+                breakpoints: {
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 10
+                    },
+                    800: {
+                        slidesPerView: 2,
+                        spaceBetween: 10
+                    },
+                    530: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next-1',
+                    prevEl: '.swiper-button-prev-1'
+                }
+            });
+        }
+    }, {
+        key: 'initializeSlider2',
+        value: function initializeSlider2() {
+            var mySwiper2 = new _swiper2.default('.swiper-2', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                navigation: {
+                    nextEl: '.swiper-button-next-2',
+                    prevEl: '.swiper-button-prev-2'
+                }
+            });
+        }
+    }, {
+        key: 'initializeSlider3',
+        value: function initializeSlider3() {
+            var mySwiper3 = new _swiper2.default('.swiper-3', {
+                slidesPerView: 4,
+                spaceBetween: 50,
+                themeColor: '#1f252a',
+                breakpoints: {
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 10
+                    },
+                    800: {
+                        slidesPerView: 2,
+                        spaceBetween: 10
+                    },
+                    530: {
+                        slidesPerView: 1,
+                        spaceBetween: 0
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+
+            });
+        }
+    }]);
+
+    return Sliders;
+}();
+
+exports.default = Sliders;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
@@ -11259,7 +11306,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                                                                                                                                                                                                                                                                                * Released on: February 22, 2019
                                                                                                                                                                                                                                                                                */
 
-var _dom = __webpack_require__(6);
+var _dom = __webpack_require__(7);
 
 var _ssrWindow = __webpack_require__(3);
 
@@ -18512,7 +18559,7 @@ Swiper.use(components);
 exports.default = Swiper;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20134,7 +20181,7 @@ exports.resize = resize;
 exports.scroll = scroll;
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20196,7 +20243,7 @@ var RevealOnScroll = function () {
 exports.default = RevealOnScroll;
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20216,7 +20263,7 @@ var _noframework = __webpack_require__(2);
 
 var _noframework2 = _interopRequireDefault(_noframework);
 
-var _jquerySmoothScroll = __webpack_require__(9);
+var _jquerySmoothScroll = __webpack_require__(10);
 
 var _jquerySmoothScroll2 = _interopRequireDefault(_jquerySmoothScroll);
 
@@ -20228,6 +20275,7 @@ var StickyHeader = function () {
     function StickyHeader() {
         _classCallCheck(this, StickyHeader);
 
+        this.lazyImages = (0, _jquery2.default)(".lazyload");
         this.appHeader = (0, _jquery2.default)(".app-header");
         this.menuContent = (0, _jquery2.default)(".app-menu");
         this.menuIcon = (0, _jquery2.default)(".app-header__menu-icon");
@@ -20235,9 +20283,17 @@ var StickyHeader = function () {
         this.createHeaderWaypoint();
         this.moverLinks = (0, _jquery2.default)(".smooth-mover");
         this.addSmoothScrolling();
+        this.refreshWaypoints();
     }
 
     _createClass(StickyHeader, [{
+        key: 'refreshWaypoints',
+        value: function refreshWaypoints() {
+            this.lazyImages.on('load', function () {
+                Waypoint.refreshAll();
+            });
+        }
+    }, {
         key: 'addSmoothScrolling',
         value: function addSmoothScrolling() {
             this.moverLinks.smoothScroll();
@@ -20268,7 +20324,7 @@ var StickyHeader = function () {
 exports.default = StickyHeader;
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20630,7 +20686,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 });
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
