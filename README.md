@@ -7,3 +7,5 @@ http://iran-fashion.majidsp.me/
 HTML, CSS, jQuery, PostCSS, Gulp, Webpack
 
 ![Main page](https://github.com/Majidsp/Iran-fashon-history/blob/master/fashion-history-preview-1.jpg)
+![Main page](https://github.com/Majidsp/Iran-fashon-history/blob/master/fashion-history-preview-2.jpg)
+
